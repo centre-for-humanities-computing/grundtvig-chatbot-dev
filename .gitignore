@@ -1,5 +1,5 @@
-secrets/
 .idea/
+dist/
 
 # Logs
 logs
