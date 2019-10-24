@@ -5,12 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service dev"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.11.2",
-    "@fortawesome/vue-fontawesome": "^0.1.7",
     "core-js": "^3.1.2",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
