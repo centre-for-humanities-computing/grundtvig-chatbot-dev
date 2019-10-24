@@ -6,7 +6,7 @@ A danish chatbot with N. F. S. Grundtvig. [try it here](https://grundtvig-chatbo
  1) clone this repository
  2) enter it
     ```shell
-    cd grundtvig-chatbot/
+    cd grundtvig-chatbot-vue/
     ```
  3) install dependencies
     ```
