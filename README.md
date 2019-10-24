@@ -1,4 +1,4 @@
-# grundtvig-chatbot
+# grundtvig-chatbot-vue
 A danish chatbot with N. F. S. Grundtvig. [try it here](https://grundtvig-chatbot.github.io)
 
 ## For developers
