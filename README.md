@@ -1,4 +1,4 @@
-# grundtvig-chatbot-vue
+# grundtvig-chatbot-dev
 A danish chatbot with N. F. S. Grundtvig. [try it here](https://grundtvig-chatbot.github.io)
 
 ## For developers
@@ -6,7 +6,7 @@ A danish chatbot with N. F. S. Grundtvig. [try it here](https://grundtvig-chatbo
  1) clone this repository
  2) enter it
     ```
-    cd grundtvig-chatbot-vue/
+    cd grundtvig-chatbot-dev/
     ```
  3) install dependencies
     ```
