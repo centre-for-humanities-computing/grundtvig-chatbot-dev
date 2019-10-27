@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
+#!/bin/bash
+# requires local ssh key connected to github.com account
 
 # abort on errors
 set -e
