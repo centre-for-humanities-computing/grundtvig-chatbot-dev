@@ -4,12 +4,12 @@ A danish chatbot with N. F. S. Grundtvig. [try it here](https://centre-for-human
 ## For developers
 In order to push your changes to the production repository of this app directly you need to [setup an ssh key for your github account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
- 1) clone this repository
- 2) enter it
+ 4) clone this repository
+ 4) enter it
     ```
     cd grundtvig-chatbot-dev/
     ```
- 3) install dependencies
+ 4) install dependencies
     ```
     npm i
     ```
@@ -18,9 +18,9 @@ In order to push your changes to the production repository of this app directly 
     npm run serve
     ```
  4) make changes 
- 4) deploy the app
+ 4) build and deploy the app
     ```
     ./deploy.sh
     ```
- 
+```./deploy.sh``` transpiles the code and pushes the contents of ```./dist/``` to the gh-pages branch of the production repository on github.com
 
