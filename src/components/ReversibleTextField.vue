@@ -33,7 +33,7 @@
       rules: {
         type: Array,
         default: function () {
-          return [v => !!v || 'Describe this application to your users and your future self']
+          return [v => !!v || 'Describe this field']
         }
       },
       action: {
@@ -65,6 +65,7 @@
           this.previousValue = this.value
           this.value = e.target.value
           this.action(this.value)
+          // e.target.value = ''
         }
       },
       restoreValue(e) {

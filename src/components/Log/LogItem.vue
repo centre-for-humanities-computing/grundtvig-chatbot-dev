@@ -4,10 +4,8 @@
     :class="side"
     outlined
   >
-    <v-card-subtitle
-      v-if="item.author"
-    >
-      <span class="author small">{{item.author}}</span>
+    <v-card-subtitle>
+      <span class="author small">{{item.author || "Jeg"}}</span>
       -
       <span class="timestamp">{{item.time}}</span>
     </v-card-subtitle>

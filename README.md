@@ -20,7 +20,7 @@ In order to push your changes to the production repository of this app directly 
  4) make changes 
  4) build and deploy the app
     ```
-    ./deploy.sh
+    sudo bash ./deploy.sh
     ```
 ```./deploy.sh``` transpiles the code and pushes the contents of ```./dist/``` to the gh-pages branch of the production repository on github.com
 

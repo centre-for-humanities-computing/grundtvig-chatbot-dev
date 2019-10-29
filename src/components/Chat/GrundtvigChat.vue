@@ -17,6 +17,8 @@
   import ReversibleTextField from '../ReversibleTextField'
   import Log from '../Log/Log'
   import { COMMIT_TO_CHAT_LOG } from '../../modules/types'
+  import generateText from '../../modules/model_GRU/controller'
+
   export default {
     name: "GrundtvigChat",
     components: {
@@ -25,27 +27,20 @@
     },
     data () {
       return {
-        rules: [v => !!v || 'Hvis du ikke har noget at sige til Grundtvig, så har han ikke noget at sige til dig...']
-      }
-    },
-    computed: {
-      chatLog: {
-        get() {
-          return this.$store.state.chatLog
-        }
+        rules: [v => !!v || 'Skriv en meddelelse til Grundtvig, han har meget at sige...']
       }
     },
     methods: {
       isBotPost (item) {
         return !item.author
       },
-      commitToChat (text) {
-        this.$store.commit(COMMIT_TO_CHAT_LOG, {author: '', text })
+      async commitToChat (text) {
+        this.$store.dispatch(COMMIT_TO_CHAT_LOG, {author: '', text })
+        this.$store.dispatch(COMMIT_TO_CHAT_LOG, {author: 'N. F. S. Grundtvig', text: await generateText(text) })
       }
     }
   }
 </script>
 
 <style scoped>
-
 </style>

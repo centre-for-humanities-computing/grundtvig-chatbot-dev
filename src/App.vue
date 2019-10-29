@@ -1,7 +1,7 @@
 <template>
   <v-app
     id="app"
-    :style="{fontSize: fontSize + '%'}"
+    :style="{fontSize: fontSize + '%!important'}"
   >
     <div
       class="page"
@@ -67,6 +67,7 @@
         } else {
           this.fontSize = Math.min(Math.max(nominalSize, window.innerWidth / 10), this.maxFontSize)
         }
+        //console.log('adjusting font size', this.fontSize)
       }
     }
   }
@@ -80,7 +81,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    font-size: 16px;
     color: #2c3e50;
   }
 

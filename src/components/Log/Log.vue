@@ -32,7 +32,7 @@
     computed: {
       log: {
         get() {
-          return this.$store.state.chatLog
+          return this.$store.state[this.listName]
         }
       },
     },

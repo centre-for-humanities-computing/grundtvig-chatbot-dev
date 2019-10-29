@@ -1,9 +1,9 @@
 import {COMMIT_TO_CHAT_LOG} from "./types"
 
 const mutations = {
-  [COMMIT_TO_CHAT_LOG]: function (state, {author, text}) {
+  [COMMIT_TO_CHAT_LOG]: function (state, {author, time, text}) {
     state.chatLog.push({
-      timestamp: Date.now(),
+      time,
       author,
       text
     })

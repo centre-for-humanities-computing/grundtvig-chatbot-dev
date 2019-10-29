@@ -1,6 +1,6 @@
 const state = {
-  minFontSize: 80,
-  maxFontSize: 150,
+  minFontSize: 120,
+  maxFontSize: 250,
   chatLog: [
     {
       time: 'mandag d. 24. oktober 1859 kl. 18:14',
