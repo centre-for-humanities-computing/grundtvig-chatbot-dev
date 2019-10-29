@@ -8,7 +8,7 @@ const debug = {
 
 let model
 async function init() {
-  model = await tf.loadLayersModel('/model/model.json')
+  model = await tf.loadLayersModel('grundtvig-chatbot-app/model/model.json')
 }
 
 async function generateText(start_string) {
