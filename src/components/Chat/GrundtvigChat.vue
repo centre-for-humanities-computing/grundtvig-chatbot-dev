@@ -1,5 +1,8 @@
 <template>
-  <div class="chat">
+  <div
+    class="chat"
+    v-hotkey.stop.prevent="keymap"
+  >
     <log
       listName="chatLog"
       :discriminator="isBotPost"
@@ -23,20 +26,43 @@
     name: "GrundtvigChat",
     components: {
       ReversibleTextField,
-      Log
+      Log,
     },
     data () {
       return {
+        talk: false,
         rules: [v => !!v || 'Skriv en meddelelse til Grundtvig, han har meget at sige...']
+      }
+    },
+    computed: {
+      keymap () {
+        return {
+          'ctrl+enter': this.toggleSpeak
+        }
       }
     },
     methods: {
       isBotPost (item) {
         return !item.author
       },
+      toggleSpeak () {
+        this.talk = !this.talk
+      },
       async commitToChat (text) {
         this.$store.dispatch(COMMIT_TO_CHAT_LOG, {author: '', text })
-        this.$store.dispatch(COMMIT_TO_CHAT_LOG, {author: 'N. F. S. Grundtvig', text: await generateText(text) })
+        const grundtvigsReply = await generateText(text)
+        this.$store.dispatch(COMMIT_TO_CHAT_LOG, {author: 'N. F. S. Grundtvig', text: grundtvigsReply })
+
+        if (this.talk) {
+          const voices = window.speechSynthesis.getVoices()
+          const selectedVoice = 33//
+          const msg = new SpeechSynthesisUtterance()
+          msg.voice = voices[selectedVoice]
+          msg.rate = 0.7
+          msg.pitch = -0.4
+          msg.text = grundtvigsReply
+          speechSynthesis.speak(msg)
+        }
       }
     }
   }

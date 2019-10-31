@@ -3,10 +3,12 @@ import App from './App'
 import store from './store'
 import _ from 'lodash'
 import vuetify from '@/plugins/vuetify';
+import VueHotkey from 'v-hotkey'
 
 Vue.config.productionTip = false
-
 Vue.prototype._ = _
+
+Vue.use(VueHotkey)
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,5 +18,6 @@ new Vue({
     iconfont: 'mdi'
   },
   store,
-  vuetify,
-}).$mount('#app')
+  vuetify
+})
+  .$mount('#app')
