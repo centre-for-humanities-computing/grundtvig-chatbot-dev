@@ -7,7 +7,6 @@
       class="page"
     >
       <v-container
-        fluid
         fill-height
         class="pageBody"
       >
@@ -96,6 +95,9 @@
   .gridRow {
     grid-template-rows: none;
     grid-template-columns: repeat(auto-fit, 1fr);
+  }
+  .pageBody {
+    max-width: 800px;
   }
   .pageBody .v-card {
     text-align: left;

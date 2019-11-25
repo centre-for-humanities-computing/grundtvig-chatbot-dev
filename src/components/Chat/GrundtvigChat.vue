@@ -31,7 +31,8 @@
     data () {
       return {
         talk: false,
-        rules: [v => !!v || 'Skriv en meddelelse til Grundtvig, han har meget at sige...']
+        rules: [v => !!v || 'Skriv en meddelelse til Grundtvig, han har meget at sige...'],
+        synth: window.speechSynthesis
       }
     },
     computed: {
@@ -50,19 +51,28 @@
       },
       async commitToChat (text) {
         this.$store.dispatch(COMMIT_TO_CHAT_LOG, {author: '', text })
+
+        // todo: insert hard coded replies here
         const grundtvigsReply = await generateText(text)
+
         this.$store.dispatch(COMMIT_TO_CHAT_LOG, {author: 'N. F. S. Grundtvig', text: grundtvigsReply })
 
         if (this.talk) {
-          const voices = window.speechSynthesis.getVoices()
-          const selectedVoice = 33//
-          const msg = new SpeechSynthesisUtterance()
-          msg.voice = voices[selectedVoice]
-          msg.rate = 0.7
-          msg.pitch = -0.4
-          msg.text = grundtvigsReply
-          speechSynthesis.speak(msg)
+          this.speak(grundtvigsReply)
         }
+      },
+      speak (text) {
+        const voices = this.synth.getVoices()
+        const Sara = voices[33]
+
+        let utterance = new SpeechSynthesisUtterance()
+
+        utterance.voice = Sara
+        utterance.rate = 0.7
+        utterance.pitch = -0.8
+        utterance.text = text
+
+        speechSynthesis.speak(utterance)
       }
     }
   }
