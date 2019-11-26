@@ -1,7 +1,7 @@
 <template>
   <div
     class="chat"
-    v-hotkey.prevent="keymap"
+    v-hotkey="keymap"
   >
     <log
       listName="chatLog"
